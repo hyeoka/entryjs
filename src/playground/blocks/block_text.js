@@ -115,7 +115,7 @@ module.exports = {
                     sprite.setText(text);
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.write_text(%1)'] },
+                syntax: { js: [], py: ['Entry.write_text(%1)'], rust: ['entry::write_text(1);'] },
             },
             text_append: {
                 color: EntryStatic.colorSet.block.default.TEXT,
@@ -164,7 +164,7 @@ module.exports = {
                     sprite.setText(`${sprite.getText()}${text}`);
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.append_text(%1)'] },
+                syntax: { js: [], py: ['Entry.append_text(%1)'], rust: ['entry::append_text(1);'] },
             },
             text_prepend: {
                 color: EntryStatic.colorSet.block.default.TEXT,
@@ -213,7 +213,7 @@ module.exports = {
                     sprite.setText(`${text}${sprite.getText()}`);
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.prepend_text(%1)'] },
+                syntax: { js: [], py: ['Entry.prepend_text(%1)'], rust: ['entry::prepend_text(1);'] },
             },
             text_change_effect: {
                 color: EntryStatic.colorSet.block.default.TEXT,
@@ -271,7 +271,7 @@ module.exports = {
                     sprite.setTextEffect(effect, mode);
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.changeTextEffect("%1", "%2")'] },
+                syntax: { js: [], py: ['Entry.changeTextEffect("%1", "%2")'], rust: ['entry::changeTextEffect("%1", "%2")'] },
             },
             text_change_font: {
                 color: EntryStatic.colorSet.block.default.TEXT,
@@ -308,7 +308,7 @@ module.exports = {
                     sprite.setFontWithLog(`${sprite.getFontSize()} ${font}`, false);
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.text_change_font("%1")'] },
+                syntax: { js: [], py: ['Entry.text_change_font("%1")'], rust: ['entry::text_change_font("%1")'] },
             },
             text_change_font_color: {
                 color: EntryStatic.colorSet.block.default.TEXT,
@@ -350,7 +350,7 @@ module.exports = {
                     sprite.setColorWithLog(color);
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.text_change_font_color("%1")'] },
+                syntax: { js: [], py: ['Entry.text_change_font_color("%1")'], rust: ['entry::text_change_font_color("%1")'] },
             },
             text_change_bg_color: {
                 color: EntryStatic.colorSet.block.default.TEXT,
@@ -391,7 +391,7 @@ module.exports = {
                     sprite.setBGColourWithLog(color);
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.text_change_bg_color("%1")'] },
+                syntax: { js: [], py: ['Entry.text_change_bg_color("%1")'], rust: ['entry::text_change_bg_color("%1")'] },
             },
             text_flush: {
                 color: EntryStatic.colorSet.block.default.TEXT,
@@ -416,7 +416,7 @@ module.exports = {
                     sprite.setText('');
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.clear_text()'] },
+                syntax: { js: [], py: ['Entry.clear_text()'], rust: ['entry::clear_text();'] },
             },
         };
     },

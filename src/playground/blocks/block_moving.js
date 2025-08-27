@@ -88,7 +88,7 @@ module.exports = {
                     }
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.move_to_direction(%1)'] },
+                syntax: { js: [], py: ['Entry.move_to_direction(%1)'], rust: ['entry::move_to_direction(%1);'] },
             },
             bounce_wall: {
                 color: EntryStatic.colorSet.block.default.MOVING,
@@ -343,7 +343,7 @@ module.exports = {
                     }
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.bounce_on_edge()'] },
+                syntax: { js: [], py: ['Entry.bounce_on_edge()'], rust: ['entry::bounce_on_edge();'] },
             },
             move_x: {
                 color: EntryStatic.colorSet.block.default.MOVING,
@@ -399,7 +399,7 @@ module.exports = {
                     }
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.add_x(%1)'] },
+                syntax: { js: [], py: ['Entry.add_x(%1)'], rust: ['entry::add_x(%1);'] },
             },
             move_y: {
                 color: EntryStatic.colorSet.block.default.MOVING,
@@ -455,7 +455,7 @@ module.exports = {
                     }
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.add_y(%1)'] },
+                syntax: { js: [], py: ['Entry.add_y(%1)'], rust: ['entry::add_y(%1);'] },
             },
             move_xy_time: {
                 color: EntryStatic.colorSet.block.default.MOVING,
@@ -569,7 +569,7 @@ module.exports = {
                         }
                     }
                 },
-                syntax: { js: [], py: ['Entry.add_xy_for_sec(%2, %3, %1)'] },
+                syntax: { js: [], py: ['Entry.add_xy_for_sec(%2, %3, %1)'], rust: ['entry::add_xy_for_sec(%2, %3, %1);'] },
             },
             locate_x: {
                 color: EntryStatic.colorSet.block.default.MOVING,
@@ -625,7 +625,7 @@ module.exports = {
                     }
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.set_x(%1)'] },
+                syntax: { js: [], py: ['Entry.set_x(%1)'], rust: ['entry::set_x(%1);'] },
             },
             locate_y: {
                 color: EntryStatic.colorSet.block.default.MOVING,
@@ -681,7 +681,7 @@ module.exports = {
                     }
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.set_y(%1)'] },
+                syntax: { js: [], py: ['Entry.set_y(%1)'], rust: ['entry::set_y(%1);'] },
             },
             locate_xy: {
                 color: EntryStatic.colorSet.block.default.MOVING,
@@ -754,7 +754,7 @@ module.exports = {
                     }
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.set_xy(%1, %2)'] },
+                syntax: { js: [], py: ['Entry.set_xy(%1, %2)'], rust: ['entry::set_xy(%1, %2);'] },
             },
             locate_xy_time: {
                 color: EntryStatic.colorSet.block.default.MOVING,
@@ -871,7 +871,7 @@ module.exports = {
                         }
                     }
                 },
-                syntax: { js: [], py: ['Entry.set_xy_for_sec(%2, %3, %1)'] },
+                syntax: { js: [], py: ['Entry.set_xy_for_sec(%2, %3, %1)'], rust: ['entry::set_xy_for_sec(%2, %3, %1);'] },
             },
             locate: {
                 color: EntryStatic.colorSet.block.default.MOVING,
@@ -1133,7 +1133,7 @@ module.exports = {
                     entity.setRotation(value + entity.getRotation());
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.add_rotation(%1)'] },
+                syntax: { js: [], py: ['Entry.add_rotation(%1)'], rust: ['entry::add_rotation(%1);'] },
             },
             direction_relative: {
                 color: EntryStatic.colorSet.block.default.MOVING,
@@ -1183,7 +1183,7 @@ module.exports = {
                     entity.setDirection(value + entity.getDirection());
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.add_direction(%1)'] },
+                syntax: { js: [], py: ['Entry.add_direction(%1)'], rust: ['entry::add_direction(%1);'] },
             },
             rotate_by_time: {
                 color: EntryStatic.colorSet.block.default.MOVING,
@@ -1270,7 +1270,7 @@ module.exports = {
                         script.frameCount--;
                     }
                 },
-                syntax: { js: [], py: ['Entry.add_rotation_for_sec(%2, %1)'] },
+                syntax: { js: [], py: ['Entry.add_rotation_for_sec(%2, %1)'], rust: ['entry::add_rotation_for_sec(%2, %1);'] },
             },
             direction_relative_duration: {
                 color: EntryStatic.colorSet.block.default.MOVING,
@@ -1361,7 +1361,7 @@ module.exports = {
                         script.frameCount--;
                     }
                 },
-                syntax: { js: [], py: ['Entry.add_direction_for_sec(%2, %1)'] },
+                syntax: { js: [], py: ['Entry.add_direction_for_sec(%2, %1)'], rust: ['entry::add_direction_for_sec(%2, %1);'] },
             },
             rotate_absolute: {
                 color: EntryStatic.colorSet.block.default.MOVING,
@@ -1411,7 +1411,7 @@ module.exports = {
                     entity.setRotation(value);
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.set_rotation(%1)'] },
+                syntax: { js: [], py: ['Entry.set_rotation(%1)'], rust: ['entry::set_rotation(%1);'] },
             },
             direction_absolute: {
                 color: EntryStatic.colorSet.block.default.MOVING,
@@ -1461,7 +1461,7 @@ module.exports = {
                     entity.setDirection(value);
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.set_direction(%1)'] },
+                syntax: { js: [], py: ['Entry.set_direction(%1)'], rust: ['entry::set_direction(%1);'] },
             },
             see_angle_object: {
                 color: EntryStatic.colorSet.block.default.MOVING,
@@ -1628,7 +1628,7 @@ module.exports = {
                     }
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.move_to_degree(%2, %1)'] },
+                syntax: { js: [], py: ['Entry.move_to_degree(%2, %1)'], rust: ['entry::move_to_degree(2, %1);'] },
             },
         };
     },

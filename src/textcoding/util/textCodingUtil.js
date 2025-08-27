@@ -9,6 +9,16 @@ class TextCodingUtil {
         });
     }
 
+    // Entry 에서 사용 중 - Rust equivalent
+    canUseRustVariables(variables) {
+        return variables.every((variable) => {
+            const target = variable.variableType === 'variable' ? 'v' : 'l';
+            // Check for Rust-specific naming rules
+            const rustNameValid = this.validateRustName(variable.name, target);
+            return !rustNameValid;
+        });
+    }
+
     // Entry 에서 사용 중
     canUsePythonFunctions(functions) {
         return functions.every(({ content }) => {
@@ -20,6 +30,25 @@ class TextCodingUtil {
             const [functionName, parameterBlock] = params;
 
             const errorMessage = this.getFunctionToPythonErrorMessage(
+                functionBlock,
+                functionName,
+                parameterBlock
+            );
+
+            return !errorMessage;
+        });
+    }
+
+    // Entry 에서 사용 중 - Rust equivalent  
+    canUseRustFunctions(functions) {
+        return functions.every(({ content }) => {
+            const code = new Entry.Code(content);
+            const funcSchemaBlock = code.getEventMap('funcDef')[0];
+            const functionBlock = funcSchemaBlock && funcSchemaBlock.params[0];
+            const { params } = functionBlock;
+            const [functionName, parameterBlock] = params;
+
+            const errorMessage = this.getFunctionToRustErrorMessage(
                 functionBlock,
                 functionName,
                 parameterBlock
@@ -662,6 +691,45 @@ class TextCodingUtil {
         }
     }
 
+    getFunctionToRustErrorMessage(functionBlock, functionName, parameterBlock) {
+        const {
+            ALERT_FUNCTION_NAME_DISORDER,
+            ALERT_FUNCTION_NAME_FIELD_MULTI,
+            ALERT_FUNCTION_HAS_BOOLEAN,
+        } = Entry.TextCodingError;
+        const DISORDER = Lang.TextCoding[ALERT_FUNCTION_NAME_DISORDER];
+        const FIELD_MULTI = Lang.TextCoding[ALERT_FUNCTION_NAME_FIELD_MULTI];
+        const HAS_BOOLEAN = Lang.TextCoding[ALERT_FUNCTION_HAS_BOOLEAN];
+        if (!functionBlock) {
+            return;
+        }
+
+        // 함수의 첫 값이 함수명필드여야 한다.
+        if (functionBlock.type !== 'function_field_label') {
+            return this.returnErrorResult(DISORDER);
+        }
+
+        // Rust 함수명의 특수문자, 예약어, 숫자로 시작됨 여부 검사
+        const errorMessageObject =
+            this.validateRustNameNotStartWithNumber(functionName, 'f') ||
+            this.validateRustNameNotStartWithSpecials(functionName, 'f') ||
+            this.validateRustNameIsReservedKeyword(functionName, 'f');
+
+        if (errorMessageObject) {
+            return errorMessageObject;
+        }
+
+        // 함수명 필드는 여러개 등장할 수 없다.
+        if (this.hasFunctionFieldLabel(parameterBlock)) {
+            return this.returnErrorResult(FIELD_MULTI);
+        }
+
+        // Rust boolean 타입 처리
+        if (this.hasFunctionBooleanField(parameterBlock)) {
+            return this._generateErrorObject(HAS_BOOLEAN, 'warning');
+        }
+    }
+
     hasFunctionFieldLabel(fBlock) {
         if (!fBlock || !fBlock.data) {
             return;
@@ -806,6 +874,17 @@ class TextCodingUtil {
         }
     }
 
+    validateRustNameNotStartWithNumber(name, errorSuffix) {
+        //Rust 이름 맨앞에 숫자가 올 수 없다.
+        const regExp = /^[0-9]$/g;
+        if (regExp.test(name[0])) {
+            return this._generateErrorObject(
+                Lang.Menus[`textcoding_numberError_${errorSuffix}`],
+                'error'
+            );
+        }
+    }
+
     /**
      * 이름이 _ 를 제외한 특수문자로 시작하는지 검사. 해당하는 경우 에러 메세지를 반환한다.
      * @param name 타겟
@@ -813,6 +892,17 @@ class TextCodingUtil {
      * @return {{message: string, type: string} | undefined} 에러메세지
      */
     validateNameNotStartWithSpecials(name, errorSuffix) {
+        const regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-+<>@\#$%&\\\=\(\'\"]/gi;
+        if (regExp.test(name)) {
+            return this._generateErrorObject(
+                Lang.Menus[`textcoding_specialCharError_${errorSuffix}`],
+                'error'
+            );
+        }
+    }
+
+    validateRustNameNotStartWithSpecials(name, errorSuffix) {
+        // Rust allows _ at the beginning but not other special chars
         const regExp = /[\{\}\[\]\/?.,;:|\)*~`!^\-+<>@\#$%&\\\=\(\'\"]/gi;
         if (regExp.test(name)) {
             return this._generateErrorObject(
@@ -866,6 +956,66 @@ class TextCodingUtil {
                 'error'
             );
         }
+    }
+
+    validateRustNameIsReservedKeyword(name, errorSuffix) {
+        const rustKeywords = [
+            'as',
+            'break',
+            'const',
+            'continue',
+            'crate',
+            'else',
+            'enum',
+            'extern',
+            'false',
+            'fn',
+            'for',
+            'if',
+            'impl',
+            'in',
+            'let',
+            'loop',
+            'match',
+            'mod',
+            'move',
+            'mut',
+            'pub',
+            'ref',
+            'return',
+            'self',
+            'Self',
+            'static',
+            'struct',
+            'super',
+            'trait',
+            'true',
+            'type',
+            'unsafe',
+            'use',
+            'where',
+            'while',
+            'async',
+            'await',
+            'dyn',
+        ];
+
+        //Rust 변수명은 예약어가 될 수 없다.
+        if (rustKeywords.includes(name)) {
+            return this._generateErrorObject(
+                Lang.Menus[`textcoding_bookedError_1${errorSuffix}`] +
+                    name +
+                    Lang.Menus[`textcoding_bookedError_2${errorSuffix}`],
+                'error'
+            );
+        }
+    }
+
+    validateRustName(name, errorSuffix) {
+        // Rust-specific name validation
+        return this.validateRustNameNotStartWithNumber(name, errorSuffix) ||
+               this.validateRustNameNotStartWithSpecials(name, errorSuffix) ||
+               this.validateRustNameIsReservedKeyword(name, errorSuffix);
     }
 
     /**

@@ -324,7 +324,7 @@ module.exports = {
                 func(sprite, script) {
                     return this.executor.breakLoop();
                 },
-                syntax: { js: [], py: ['break'] },
+                syntax: { js: [], py: ['break'], rust: ['break'] },
             },
             _if: {
                 color: EntryStatic.colorSet.block.default.FLOW,
@@ -529,7 +529,7 @@ module.exports = {
                         return script;
                     }
                 },
-                syntax: { js: [], py: ['Entry.wait_until(%1)'] },
+                syntax: { js: [], py: ['Entry.wait_until(%1)'], rust: ['entry::wait_until(1);'] },
             },
             stop_object: {
                 color: EntryStatic.colorSet.block.default.FLOW,
@@ -673,7 +673,7 @@ module.exports = {
                         Entry.engine.toggleRun();
                     });
                 },
-                syntax: { js: [], py: ['Entry.start_again()'] },
+                syntax: { js: [], py: ['Entry.start_again()'], rust: ['entry::start_again();'] },
             },
             when_clone_start: {
                 color: EntryStatic.colorSet.block.default.FLOW,
@@ -804,7 +804,7 @@ module.exports = {
                     sprite.removeClone();
                     return this.die();
                 },
-                syntax: { js: [], py: ['Entry.remove_this_clone()'] },
+                syntax: { js: [], py: ['Entry.remove_this_clone()'], rust: ['entry::remove_this_clone();'] },
             },
             remove_all_clones: {
                 color: EntryStatic.colorSet.block.default.FLOW,
@@ -834,7 +834,7 @@ module.exports = {
 
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.remove_all_clone()'] },
+                syntax: { js: [], py: ['Entry.remove_all_clone()'], rust: ['entry::remove_all_clone();'] },
             },
         };
     },

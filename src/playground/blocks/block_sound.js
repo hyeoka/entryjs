@@ -568,7 +568,7 @@ module.exports = {
                     Entry.Utils.setVolume(value);
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.add_sound_volume(%1)'] },
+                syntax: { js: [], py: ['Entry.add_sound_volume(%1)'], rust: ['entry::add_sound_volume(1);'] },
             },
             sound_volume_set: {
                 color: EntryStatic.colorSet.block.default.SOUND,
@@ -624,7 +624,7 @@ module.exports = {
                     Entry.Utils.setVolume(value);
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.set_sound_volume(%1)'] },
+                syntax: { js: [], py: ['Entry.set_sound_volume(%1)'], rust: ['entry::set_sound_volume(1);'] },
             },
             get_sound_speed: {
                 color: EntryStatic.colorSet.block.default.SOUND,
@@ -645,7 +645,7 @@ module.exports = {
                 func() {
                     return Entry.playbackRateValue;
                 },
-                syntax: { js: [], py: ['Entry.stop_sound()'] },
+                syntax: { js: [], py: ['Entry.stop_sound()'], rust: ['entry::stop_sound();'] },
             },
             sound_speed_change: {
                 color: EntryStatic.colorSet.block.default.SOUND,
@@ -695,7 +695,7 @@ module.exports = {
 
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.stop_sound()'] },
+                syntax: { js: [], py: ['Entry.stop_sound()'], rust: ['entry::stop_sound();'] },
             },
             sound_speed_set: {
                 color: EntryStatic.colorSet.block.default.SOUND,
@@ -745,7 +745,7 @@ module.exports = {
 
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.stop_sound()'] },
+                syntax: { js: [], py: ['Entry.stop_sound()'], rust: ['entry::stop_sound();'] },
             },
             sound_silent_all: {
                 color: EntryStatic.colorSet.block.default.SOUND,
@@ -805,7 +805,7 @@ module.exports = {
                     }
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.stop_sound()'] },
+                syntax: { js: [], py: ['Entry.stop_sound()'], rust: ['entry::stop_sound();'] },
             },
             play_bgm: {
                 color: EntryStatic.colorSet.block.default.SOUND,
@@ -849,7 +849,7 @@ module.exports = {
                     }
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.stop_sound()'] },
+                syntax: { js: [], py: ['Entry.stop_sound()'], rust: ['entry::stop_sound();'] },
             },
             stop_bgm: {
                 color: EntryStatic.colorSet.block.default.SOUND,
@@ -877,7 +877,7 @@ module.exports = {
                     Entry.Utils.forceStopBGM();
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.stop_sound()'] },
+                syntax: { js: [], py: ['Entry.stop_sound()'], rust: ['entry::stop_sound();'] },
             },
             get_sound_volume: {
                 color: EntryStatic.colorSet.block.default.SOUND,

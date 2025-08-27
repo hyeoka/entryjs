@@ -24,7 +24,7 @@ module.exports = {
                     sprite.setVisible(true);
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.show()'] },
+                syntax: { js: [], py: ['Entry.show()'], rust: ['entry::show();'] },
             },
             hide: {
                 color: EntryStatic.colorSet.block.default.LOOKS,
@@ -49,7 +49,7 @@ module.exports = {
                     sprite.setVisible(false);
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.hide()'] },
+                syntax: { js: [], py: ['Entry.hide()'], rust: ['entry::hide();'] },
             },
             dialog_time: {
                 color: EntryStatic.colorSet.block.default.LOOKS,
@@ -310,7 +310,7 @@ module.exports = {
                     }
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.clear_print()'] },
+                syntax: { js: [], py: ['Entry.clear_print()'], rust: ['entry::clear_print();'] },
             },
             change_to_some_shape: {
                 color: EntryStatic.colorSet.block.default.LOOKS,
@@ -670,7 +670,7 @@ module.exports = {
                     sprite.resetFilter();
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.clear_effect()'] },
+                syntax: { js: [], py: ['Entry.clear_effect()'], rust: ['entry::clear_effect();'] },
             },
             change_scale_size: {
                 color: EntryStatic.colorSet.block.default.LOOKS,
@@ -720,7 +720,7 @@ module.exports = {
                     sprite.setSize(sprite.getSize() + sizeValue);
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.add_size(%1)'] },
+                syntax: { js: [], py: ['Entry.add_size(%1)'], rust: ['entry::add_size(%1);'] },
             },
             set_scale_size: {
                 color: EntryStatic.colorSet.block.default.LOOKS,
@@ -770,7 +770,7 @@ module.exports = {
                     sprite.setSize(sizeValue);
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.set_size(%1)'] },
+                syntax: { js: [], py: ['Entry.set_size(%1)'], rust: ['entry::set_size(%1);'] },
             },
             flip_x: {
                 color: EntryStatic.colorSet.block.default.LOOKS,
@@ -795,7 +795,7 @@ module.exports = {
                     sprite.setScaleY(-1 * sprite.getScaleY());
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.flip_horizontal()'] },
+                syntax: { js: [], py: ['Entry.flip_horizontal()'], rust: ['entry::flip_horizontal();'] },
             },
             flip_y: {
                 color: EntryStatic.colorSet.block.default.LOOKS,
@@ -820,7 +820,7 @@ module.exports = {
                     sprite.setScaleX(-1 * sprite.getScaleX());
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.flip_vertical()'] },
+                syntax: { js: [], py: ['Entry.flip_vertical()'], rust: ['entry::flip_vertical();'] },
             },
             change_object_index: {
                 color: EntryStatic.colorSet.block.default.LOOKS,

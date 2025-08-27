@@ -192,6 +192,38 @@ module.exports = {
                             ],
                         },
                     ],
+                    rust: [
+                        {
+                            syntax: '(%1 %2 %3)',
+                            template: '%1 %2 %3',
+                            keyOption: 'calc_basic',
+                            blockType: 'param',
+                            textParams: [
+                                {
+                                    type: 'Block',
+                                    accept: 'string',
+                                },
+                                {
+                                    type: 'Dropdown',
+                                    options: [
+                                        ['+', 'PLUS'],
+                                        ['-', 'MINUS'],
+                                        ['*', 'MULTI'],
+                                        ['/', 'DIVIDE'],
+                                    ],
+                                    value: 'PLUS',
+                                    fontSize: 11,
+                                    noArrow: true,
+                                    converter: Entry.block.converters.returnOperator,
+                                    paramType: 'operator',
+                                },
+                                {
+                                    type: 'Block',
+                                    accept: 'string',
+                                },
+                            ],
+                        },
+                    ],
                 },
             },
             calc_rand: {

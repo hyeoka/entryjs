@@ -1116,7 +1116,7 @@ Entry.RobotamiCoding.getBlocks = function() {
                 };
                  return script.callReturn();
             },
-            syntax: { js: [], py: [{}] },
+            syntax: { js: [], py: [{}], rust: [] },
         },
         robotami_coding_set_rgb_color: {
             color: EntryStatic.colorSet.block.default.HARDWARE,

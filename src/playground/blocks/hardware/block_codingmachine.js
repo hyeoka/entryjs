@@ -266,7 +266,7 @@ Entry.Codingmachine.getBlocks = function() {
                 else if (analog_sel == 2) return sensorData[Entry.Codingmachine.Sensor.ANALOG_A5];
                 else return sensorData[Entry.Codingmachine.Sensor.ANALOG_A4];
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         /* ----------- 추가 --------- */
         codingmachine_joystick: {
@@ -277,7 +277,7 @@ Entry.Codingmachine.getBlocks = function() {
                 type: 'codingmachine_joystick',
             },
             isNotFor: ['Codingmachine'],
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
 
         /* ----------- 추가 --------- */
@@ -334,7 +334,7 @@ Entry.Codingmachine.getBlocks = function() {
                         : 1;
                 }
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         /* ----------- 추가 --------- */
         codingmachine_button: {
@@ -346,7 +346,7 @@ Entry.Codingmachine.getBlocks = function() {
             },
             isNotFor: ['Codingmachine'],
 
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
 
         codingmachine_gyro: {
@@ -357,7 +357,7 @@ Entry.Codingmachine.getBlocks = function() {
                 type: 'codingmachine_gyro',
             },
             isNotFor: ['Codingmachine'],
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
 
         codingmachine_ultrasonic: {
@@ -368,7 +368,7 @@ Entry.Codingmachine.getBlocks = function() {
                 type: 'codingmachine_ultrasonic',
             },
             isNotFor: ['Codingmachine'],
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
 
         codingmachine_connect: {
@@ -379,7 +379,7 @@ Entry.Codingmachine.getBlocks = function() {
                 type: 'codingmachine_connect',
             },
             isNotFor: ['Codingmachine'],
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
 
         codingmachine_ready: {
@@ -391,7 +391,7 @@ Entry.Codingmachine.getBlocks = function() {
             },
 
             isNotFor: ['Codingmachine'],
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
 
         /* -------- 추가 ------- */
@@ -474,7 +474,7 @@ Entry.Codingmachine.getBlocks = function() {
                 cmd[Entry.Codingmachine.Cmd.SERVODGREE] = act_val;
                 return script.callReturn();
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         /* -------- 추가 ------- */
         /* -------- 추가 ------- */
@@ -548,7 +548,7 @@ Entry.Codingmachine.getBlocks = function() {
                 cmd[Entry.Codingmachine.Cmd.DIGITAL_PWM] = act_value;
                 return script.callReturn();
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         /* -------- 추가 ------- */
         /* -------- 추가 ------- */
@@ -658,7 +658,7 @@ Entry.Codingmachine.getBlocks = function() {
                 }
                 return script.callReturn();
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         /* -------- 추가 ------- */
         codingmachine_led: {
@@ -670,7 +670,7 @@ Entry.Codingmachine.getBlocks = function() {
             },
 
             isNotFor: ['Codingmachine'],
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
 
         codingmachine_tune: {
@@ -682,7 +682,7 @@ Entry.Codingmachine.getBlocks = function() {
             },
 
             isNotFor: ['Codingmachine'],
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
 
         codingmachine_motor: {
@@ -694,7 +694,7 @@ Entry.Codingmachine.getBlocks = function() {
             },
 
             isNotFor: ['Codingmachine'],
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
 
         codingmachine_throttle: {
@@ -706,7 +706,7 @@ Entry.Codingmachine.getBlocks = function() {
             },
 
             isNotFor: ['Codingmachine'],
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
 
         codingmachine_altitude: {
@@ -718,7 +718,7 @@ Entry.Codingmachine.getBlocks = function() {
             },
 
             isNotFor: ['Codingmachine'],
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
 
         codingmachine_rollpitch: {
@@ -730,7 +730,7 @@ Entry.Codingmachine.getBlocks = function() {
             },
 
             isNotFor: ['Codingmachine'],
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
 
         codingmachine_yaw: {
@@ -742,7 +742,7 @@ Entry.Codingmachine.getBlocks = function() {
             },
 
             isNotFor: ['Codingmachine'],
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
 
         codingmachine_emergency: {
@@ -754,7 +754,7 @@ Entry.Codingmachine.getBlocks = function() {
             },
 
             isNotFor: ['Codingmachine'],
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
 
         //endregion JDKit
