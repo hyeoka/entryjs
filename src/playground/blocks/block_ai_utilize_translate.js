@@ -151,6 +151,10 @@ function getInitialCodeMap() {
             lang: Lang.Blocks.hindi,
             sub: ['ko', 'en', 'ja', 'zh-CN', 'zh-TW', 'de', 'ru', 'pt'],
         },
+        rust: {
+            lang: Lang.Blocks.rust,
+            sub: ['ko', 'en', 'ja', 'zh-CN', 'zh-TW', 'es', 'fr', 'de', 'ru', 'pt', 'th', 'vi', 'id', 'hi'],
+        },
     };
 }
 
@@ -223,6 +227,7 @@ Entry.AI_UTILIZE_BLOCK.translate.getBlocks = function() {
                 [Lang.Blocks.vietnamese, 'vi'],
                 [Lang.Blocks.indonesian, 'id'],
                 [Lang.Blocks.hindi, 'hi'],
+                [Lang.Blocks.rust, 'rust'],
             ];
             const index = _.findIndex(options, (x) => x[1] === value);
             if (index > 0) {

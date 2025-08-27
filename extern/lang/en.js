@@ -1052,6 +1052,7 @@ Lang.Blocks = {
     vietnamese: 'Vietnamese',
     indonesian: 'Indonesian',
     hindi: 'Hindi',
+    rust: 'Rust',
     AI_UTILIZE: 'AI',
     video_show_video: 'Show',
     video_hide_video: 'Hide',

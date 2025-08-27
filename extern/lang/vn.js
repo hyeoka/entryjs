@@ -443,6 +443,7 @@ Lang.Blocks = {
     "thai": "Thai",
     "vietnamese": "Vietnamese",
     "indonesian": "Indonesian",
+    "rust": "Rust",
     "chinese_simplified": "Simplified Chinese",
     "chinese_traditional": "Traditional Chinese",
     "italian": "Italian",
