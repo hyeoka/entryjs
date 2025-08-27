@@ -1007,7 +1007,7 @@ Entry.LineCoding.getBlocks = function() {
                 };
                 return script.callReturn();
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         // 2. 저장 종료
         LineCodingStop: {
@@ -1048,7 +1048,7 @@ Entry.LineCoding.getBlocks = function() {
                 };
                 return script.callReturn();
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         // 3. 쉬운주행
         LineCodingLineEasy: {
@@ -1107,7 +1107,7 @@ Entry.LineCoding.getBlocks = function() {
                     return script.callReturn();
                 }
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         // 4. 쉬운주행 설정
         LineCodingEasySet: {
@@ -1189,7 +1189,7 @@ Entry.LineCoding.getBlocks = function() {
                     return script.callReturn();
                 }
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         // 직진시간설정
         LineCodingEasyTimeSet: {
@@ -1258,7 +1258,7 @@ Entry.LineCoding.getBlocks = function() {
                     return script.callReturn();
                 }
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
 
         // 5.  쉬운 모터이동
@@ -1335,7 +1335,7 @@ Entry.LineCoding.getBlocks = function() {
                     return script.callReturn();
                 }
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         // 리스타트
         LineCodingRestart: {
@@ -1395,7 +1395,7 @@ Entry.LineCoding.getBlocks = function() {
                     return script.callReturn();
                 }
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         // 딜레이
         LineCodingDelay: {
@@ -1459,7 +1459,7 @@ Entry.LineCoding.getBlocks = function() {
                     return script.callReturn();
                 }
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         // 5.  line
         LineCodingLine: {
@@ -1548,7 +1548,7 @@ Entry.LineCoding.getBlocks = function() {
                 }
                 //return script.callReturn();
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         //  turn lt rt
         LineCodingTurn: {
@@ -1638,7 +1638,7 @@ Entry.LineCoding.getBlocks = function() {
                     return script.callReturn();
                 }
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         //  motor
         LineCodingMotor: {
@@ -1729,7 +1729,7 @@ Entry.LineCoding.getBlocks = function() {
                     return script.callReturn();
                 }
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         //  bmotor bwmotor
         LineCodingBmotor: {
@@ -1844,7 +1844,7 @@ Entry.LineCoding.getBlocks = function() {
                     return script.callReturn();
                 }
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         //DC 모터 속도 정하기 wheel
         LineCodingWheel: {
@@ -1926,7 +1926,7 @@ Entry.LineCoding.getBlocks = function() {
                     return script.callReturn();
                 }
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         // 5.  서보 모터 각도 설정하기
         LineCodingServo: {
@@ -2026,7 +2026,7 @@ Entry.LineCoding.getBlocks = function() {
                     return script.callReturn();
                 }
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         // 디지털  출력
         LineCodingDigitalOnOff: {
@@ -2105,7 +2105,7 @@ Entry.LineCoding.getBlocks = function() {
                     return script.callReturn();
                 }
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         //  스피커 멜로디
         LineCodingMelody: {
@@ -2233,7 +2233,7 @@ Entry.LineCoding.getBlocks = function() {
                     return script.callReturn();
                 }
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
 
         // 11. 디지털입력
@@ -2278,7 +2278,7 @@ Entry.LineCoding.getBlocks = function() {
                 };
                 return Entry.hw.portData.DIGITAL[parseInt(port2, 10)];
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
 
         // 12. 아날로그 읽기
@@ -2319,7 +2319,7 @@ Entry.LineCoding.getBlocks = function() {
 
                 return ANALOG[parseInt(BtnIndex, 10)];
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         // LCD글자출력
         LineCodingSetLcdString: {
@@ -2443,7 +2443,7 @@ Entry.LineCoding.getBlocks = function() {
                 }
                  
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
 
         // LCD 지우기
@@ -2483,7 +2483,7 @@ Entry.LineCoding.getBlocks = function() {
                 };
                 return script.callReturn();
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         //  mapping 값
         LineCodingGetAnalogMapping: {
@@ -2575,7 +2575,7 @@ Entry.LineCoding.getBlocks = function() {
 
                 return Math.round(result);
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         // 조종기 수신
         LineCodingRemotRx: {
@@ -2637,7 +2637,7 @@ Entry.LineCoding.getBlocks = function() {
                 };
                 return script.callReturn();
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         //.  linedelay
         LineCodingLineDelay: {
@@ -2729,7 +2729,7 @@ Entry.LineCoding.getBlocks = function() {
                 }
                 //return script.callReturn();
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         //absh
         LineCodingABSH: {
@@ -2864,7 +2864,7 @@ Entry.LineCoding.getBlocks = function() {
                     return script.callReturn();
                 }
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         //  부저명령
         LineCodingBuzzerOnOff: {
@@ -2954,7 +2954,7 @@ Entry.LineCoding.getBlocks = function() {
                     return script.callReturn();
                 }
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         //  LED명령
         LineCodingLED: {
@@ -3056,7 +3056,7 @@ Entry.LineCoding.getBlocks = function() {
                     return script.callReturn();
                 }
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         LineCodingBlackForwardF: {
             color: EntryStatic.colorSet.block.default.HARDWARE,
@@ -3171,7 +3171,7 @@ Entry.LineCoding.getBlocks = function() {
                     return script.callReturn();
                 }
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         //DC 모터 직진편차보정 ffmotor
         LineCodingFFmotor: {
@@ -3242,7 +3242,7 @@ Entry.LineCoding.getBlocks = function() {
                 RmotorSpeed = rspeed2;
                 return script.callReturn();
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         //DC 모터 후진편차보정 bbmotor
         LineCodingBBmotor: {
@@ -3313,7 +3313,7 @@ Entry.LineCoding.getBlocks = function() {
                 RmotorSpeed = rspeed2;
                 return script.callReturn();
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
         //DC 모터 정지보정 motorstop
         LineCodingMotorStop: {
@@ -3385,7 +3385,7 @@ Entry.LineCoding.getBlocks = function() {
                 RmotorSpeed = rspeed2;
                 return script.callReturn();
             },
-            syntax: { js: [], py: [] },
+            syntax: { js: [], py: [], rust: [] },
         },
     };
 };

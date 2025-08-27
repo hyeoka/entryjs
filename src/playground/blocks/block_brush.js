@@ -25,7 +25,7 @@ module.exports = {
 
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.stamp()'] },
+                syntax: { js: [], py: ['Entry.stamp()'], rust: ['entry::stamp();'] },
             },
             start_drawing: {
                 color: EntryStatic.colorSet.block.default.BRUSH,
@@ -57,7 +57,7 @@ module.exports = {
 
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.start_drawing()'] },
+                syntax: { js: [], py: ['Entry.start_drawing()'], rust: ['entry::start_drawing();'] },
             },
             stop_drawing: {
                 color: EntryStatic.colorSet.block.default.BRUSH,
@@ -85,7 +85,7 @@ module.exports = {
 
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.stop_drawing()'] },
+                syntax: { js: [], py: ['Entry.stop_drawing()'], rust: ['entry::stop_drawing();'] },
             },
             start_fill: {
                 color: EntryStatic.colorSet.block.default.BRUSH,
@@ -274,7 +274,7 @@ module.exports = {
 
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.set_brush_color_to_random()'] },
+                syntax: { js: [], py: ['Entry.set_brush_color_to_random()'], rust: ['entry::set_brush_color_to_random();'] },
             },
             set_fill_color: {
                 color: EntryStatic.colorSet.block.default.BRUSH,
@@ -392,7 +392,7 @@ module.exports = {
 
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.add_brush_size(%1)'] },
+                syntax: { js: [], py: ['Entry.add_brush_size(%1)'], rust: ['entry::add_brush_size(1);'] },
             },
             set_thickness: {
                 color: EntryStatic.colorSet.block.default.BRUSH,
@@ -454,7 +454,7 @@ module.exports = {
 
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.set_brush_size(%1)'] },
+                syntax: { js: [], py: ['Entry.set_brush_size(%1)'], rust: ['entry::set_brush_size(1);'] },
             },
             change_brush_transparency: {
                 color: EntryStatic.colorSet.block.default.BRUSH,
@@ -545,7 +545,7 @@ module.exports = {
 
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.add_brush_transparency(%1)'] },
+                syntax: { js: [], py: ['Entry.add_brush_transparency(%1)'], rust: ['entry::add_brush_transparency(1);'] },
             },
             set_brush_tranparency: {
                 color: EntryStatic.colorSet.block.default.BRUSH,
@@ -625,7 +625,7 @@ module.exports = {
 
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.set_brush_transparency(%1)'] },
+                syntax: { js: [], py: ['Entry.set_brush_transparency(%1)'], rust: ['entry::set_brush_transparency(1);'] },
             },
             brush_erase_all: {
                 color: EntryStatic.colorSet.block.default.BRUSH,
@@ -652,7 +652,7 @@ module.exports = {
                     sprite.removeStamps();
                     return script.callReturn();
                 },
-                syntax: { js: [], py: ['Entry.clear_drawing()'] },
+                syntax: { js: [], py: ['Entry.clear_drawing()'], rust: ['entry::clear_drawing();'] },
             },
         };
     },

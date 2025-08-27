@@ -22,7 +22,7 @@ module.exports = {
                         },
                     ],
                 },
-                syntax: { js: [], py: [''] },
+                syntax: { js: [], py: [''], rust: ['// TODO: Implement Rust syntax'] },
             },
             listAddButton: {
                 skeleton: 'basic_button',
@@ -142,7 +142,7 @@ module.exports = {
                         return script;
                     }
                 },
-                syntax: { js: [], py: ['Entry.input(%1)'] },
+                syntax: { js: [], py: ['Entry.input(%1)'], rust: ['entry::input(1);'] },
             },
             get_canvas_input_value: {
                 color: EntryStatic.colorSet.block.default.VARIABLE,
